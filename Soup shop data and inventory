@@ -1,0 +1,18 @@
+CREATE TABLE soup_shop (id INTEGER PRIMARY KEY, item TEXT, price NUMERIC, stock_amount INTEGER, container TEXT);
+INSERT INTO soup_shop VALUES (1, "mushroom madness", 10.50, 4, "glass");
+INSERT INTO soup_shop VALUES (2, "tacky tomato", 10.50, 11,"glass");
+INSERT INTO soup_shop VALUES (3, "lit leek", 10.50, 8, "glass");
+INSERT INTO soup_shop VALUES (4, "po' tatoes", 10.50, 8, "glass");
+INSERT INTO soup_shop VALUES (5, "chill E", 10.50, 4, "glass");
+INSERT INTO soup_shop VALUES (6, "stewed up", 10, 5,"plastic");
+INSERT INTO soup_shop VALUES (7, "no beef with stew", 10, 8,"plastic");
+INSERT INTO soup_shop VALUES (8, "corny chowder", 10, 4, "plastic");
+INSERT INTO soup_shop VALUES (9, "corny bread", 1.50, 45,"none");
+INSERT INTO soup_shop VALUES (10, "biscuit", 1.50, 45, "none");
+INSERT INTO soup_shop VALUES (11, "side salad", 4, 25, "sm container");
+INSERT INTO soup_shop VALUES (12, "minestrone", 10.50, 5, "glass");
+INSERT INTO soup_shop VALUES (13, "broccoli and bold cheddar", 10.50, 15, "glass");
+INSERT INTO soup_shop VALUES (14, "taco tuesday anyday", 10, 11, "plastic");
+INSERT INTO soup_shop VALUES (15, "chicken nood", 10.50, 5, "glass");
+SELECT* FROM soup_shop ORDER BY price;
+SELECT SUM (stock_amount) FROM soup_shop;
