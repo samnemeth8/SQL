@@ -1,0 +1,54 @@
+CREATE TABLE spotify_top20_2021 
+(id INTEGER PRIMARY KEY AUTOINCREMENT, 
+artist_name TEXT, 
+track_name TEXT,
+popularity INTEGER);
+
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Olivia Rodrigo", "Drivers License", 92);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Lil Nas X", "MONTERO", 90);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ( "the kid LOROI", "STAY", 92);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Olivia Rodrigo", "Good 4 u", 95);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Dua Lipa", "Levitating", 89);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Justin Bieber","Peaches", 90);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Doja Cat", "Kiss Me More", 88);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("The Weekend", "Blinding Lights", 93);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Glass Animals", "Heat Waves", 94);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Maneskin", "Beggin'", 93);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Masked Wolf", "Astronaut In The Ocean", 77);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Bad Bunny","DAKITI", 87);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Lil Nas X", "Industry Baby", 90);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Ed Sheeran", "Bad Habits", 95);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("The Weekend", "Save Your Tears", 90);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("BTS", "Butter", 71);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Bruno Mars", "Leave The Door Open", 86);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Olivia Rodrigo", "deja vu", 90);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("Rauw Alejandro", "todo de ti", 69);
+INSERT INTO spotify_top20_2021 (artist_name, track_name, popularity) VALUES ("24kGoldn", "mood", 89);
+
+SELECT * FROM spotify_top20_2021;
+
+SELECT * FROM spotify_top20_2021 WHERE artist_name = "Olivia Rodrigo";
+
+SELECT artist_name FROM spotify_top20_2021 GROUP BY popularity <90;
+
+/*CASE*/
+SELECT track_name, popularity,
+CASE 
+    WHEN popularity > 90 THEN "amazing"
+    WHEN popularity > 80 THEN "okay"
+    WHEN popularity > 70 THEN "dancable"
+    ELSE "terrible"
+END as "popularity_target"
+FROM spotify_top20_2021;
+
+/*HAVING*/
+SELECT artist_name, popularity AS winner FROM spotify_top20_2021
+GROUP BY artist_name 
+HAVING popularity > 90;
+
+/*OR*/
+SELECT * FROM spotify_top20_2021 WHERE popularity <= 90 OR popularity <= 80;
+
+/*AND*/
+SELECT * FROM spotify_top20_2021 WHERE popularity >90 
+AND popularity <80;
